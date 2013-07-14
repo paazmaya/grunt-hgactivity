@@ -1,6 +1,10 @@
 # grunt-hgactivity
 
-Run `hg activity` with the given options on weekly iteration for the whole history of the current Mercurial repository
+Provides a Grunt task that runs the command 'hg activity' with the given options.
+This task can be configured to split the activity graphic based on the given time span.
+
+The project that this task is used, should use Mercurial as its version control system and the current user
+should have [the Activity Extension](http://mercurial.selenic.com/wiki/ActivityExtension) installed.
 
 
 ## Getting Started
@@ -36,7 +40,7 @@ Current values shown are the defaults.
 
   hgactivity: {
     main: {
-      split: 'none', // 'none', 'authors', 'files', 'branches', 'directories',
+      split: ['none'], // 'none', 'authors', 'files', 'branches', 'directories',
       filenamePrefix: 'activity-',
       width: 800,
       height: 600,
@@ -61,8 +65,8 @@ grunt hgactivity
 
 ## Dependencies
 
- * Mercurial
- * Activity plugin
+ * Mercurial version control system
+ * Activity extension for Mercurial
 
   
 ## Changelog

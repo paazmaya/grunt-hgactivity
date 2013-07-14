@@ -14,7 +14,7 @@ module.exports = function(grunt) {
     
     // Default options which will be extended with user defined
     var options = this.options({
-      split: 'none', // 'none', 'authors', 'files', 'branches', 'directories',
+      split: ['none'], // 'none', 'authors', 'files', 'branches', 'directories',
       filenamePrefix: 'activity-',
       width: 800,
       height: 600,
@@ -32,7 +32,7 @@ module.exports = function(grunt) {
     var args = [];
     
     // Options that can be used as such and prepended with --
-    ['split', 'width', 'height', 'height', 'cwindow'].forEach(function (key) {
+    ['width', 'height', 'height', 'cwindow'].forEach(function (key) {
       if (options.hasOwnProperty(key)) {
         args.push('--' + key);
         args.push(options[key]);
@@ -66,10 +66,16 @@ module.exports = function(grunt) {
       });
     }
     
-    args.push('--filename');
-    args.push(filenamePrefix + (options.split !== 'none' ? options.split : '') + '.png');
-    
     console.dir(args);
+    
+    // The amount of split options defines the amount of outer loops.
+    // Inner loop count depends of the time span and interval.
+    options.split.forEach(function (split) {
+      var filename = options.filenamePrefix + (split !== 'none' ? split : '') + '.png';
+      var arguments = args.join(' ') + ' --filename ' + filename;
+    });
+    
+    
   });
 
 };
