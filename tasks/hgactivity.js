@@ -10,7 +10,10 @@ module.exports = function(grunt) {
   'use strict';
 
   grunt.registerMultiTask('hgactivity', 'Repository activity', function() {
-    var path = require('path');
+    var moment = require('moment'),
+      dateFormat = 'YYYY-MM-DD';
+    
+    var done = this.async();
     
     // Default options which will be extended with user defined
     var options = this.options({
@@ -29,7 +32,7 @@ module.exports = function(grunt) {
     
 
     // Command line arguments for 'hg activity'
-    var args = [];
+    var args = ['activity'];
     
     // Options that can be used as such and prepended with --
     ['width', 'height', 'height', 'cwindow'].forEach(function (key) {
@@ -47,7 +50,15 @@ module.exports = function(grunt) {
     });
     
     // Get the age of the repository for time span and interval building
-    //grunt.util.spawn('hg');
+    /* Save for later...
+    grunt.util.spawn({
+      cmd: 'hg',
+      args: []
+    }, function (error, result, code) {
+    });
+    */
+    
+    var loops =  1;
     
     // Time span for each picture. This is the only option that triggers multiple image generation
     if (options.interval !== '') {
@@ -55,6 +66,12 @@ module.exports = function(grunt) {
       console.log('span: ' + span);
       var counter = parseInt(options.interval);
       console.log('counter: ' + counter);
+      
+      // For now, require the min and max dates, thus this will work.
+      var max = moment(options.datemax, dateFormat);
+      var min = moment(options.datemin, dateFormat);
+      var timeWord = 'months'; // default
+      loops = Math.ceil(min.diff(max, timeWord, true) / counter);
     }
     else {
       // Use possible dates as such and only for one picture
@@ -71,8 +88,27 @@ module.exports = function(grunt) {
     // The amount of split options defines the amount of outer loops.
     // Inner loop count depends of the time span and interval.
     options.split.forEach(function (split) {
-      var filename = options.filenamePrefix + (split !== 'none' ? split : '') + '.png';
-      var arguments = args.join(' ') + ' --filename ' + filename;
+      var filename = options.filenamePrefix + (split !== 'none' ? split : '');
+     
+      
+      // Inner loop based on time span
+      for (var i = 0; i < loops; i++) {
+        var arguments = args.concat('--filename', filename + '-' + i + '.png');
+      
+        var child = grunt.util.spawn({
+          cmd: 'hg',
+          args: arguments
+        }, function (error, result, code) {
+          console.dir(result);
+          if (error) {
+            throw error;
+          }
+          grunt.log.writeln(code + '' + result);
+          if (code !== 0) {
+            return grunt.warn(String(code));
+          }
+        });
+      }
     });
     
     
