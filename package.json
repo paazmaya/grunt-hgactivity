@@ -1,0 +1,31 @@
+{
+  "name": "grunt-hgactivity",
+  "description": "",
+  "version": "0.1.0",
+  "homepage": "https://github.com/paazmaya/grunt-hgactivity",
+  "author": {
+    "name": "Juga Paazmaya",
+    "email": "olavic@gmail.com",
+    "url": "http://paazmaya.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/paazmaya/grunt-hgactivity.git"
+  },
+  "bugs": {
+    "url": "https://github.com/paazmaya/grunt-hgactivity/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/paazmaya/grunt-hgactivity/blob/master/LICENSE-MIT"
+    }
+  ],
+  "main": "Gruntfile.js",
+  "dependencies": {
+    "grunt": "~0.4.1"
+  },
+  "keywords": [
+    "hg", "mercurial", "activity", "version", "vcs", "chart", "graph", "gruntplugin"
+  ]
+}
