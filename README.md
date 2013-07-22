@@ -40,17 +40,20 @@ Current values shown are the defaults.
 
   hgactivity: {
     main: {
-      split: ['none'], // 'none', 'authors', 'files', 'branches', 'directories',
-      filenamePrefix: 'activity-',
-      width: 800,
-      height: 600,
-      datemin: '', // yyyy-mm-dd, if left empty, will use all available time
-      datemax: '', // yyyy-mm-dd
-      interval: '1w', // int followed by: m = months (unsupported: w = weeks, d = days, h = hours)
-      uselines: true,
-      showtags: false,
-      imagetitle: '', // prefix which will be followed by the split if not none and time span
-      cwindow: 2
+      options: {
+        split: ['none'], // 'none', 'authors', 'files', 'branches', 'directories',
+        filenamePrefix: 'activity-',
+        width: 800,
+        height: 600,
+        datemin: '', // yyyy-mm-dd, if left empty, will use all available time
+        datemax: '', // yyyy-mm-dd
+        interval: '1w', // int followed by: m = months (unsupported: w = weeks, d = days, h = hours)
+        iterations: 10, // number of iterations the interval should be useds
+        uselines: true,
+        showtags: false,
+        imagetitle: '', // prefix which will be followed by the split if not none and time span
+        cwindow: 2
+      }
     }
   }
 
