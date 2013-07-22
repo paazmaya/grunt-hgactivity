@@ -3,8 +3,9 @@
 Provides a Grunt task that runs the command 'hg activity' with the given options.
 This task can be configured to split the activity graphic based on the given time span.
 
-The project that this task is used, should use Mercurial as its version control system and the current user
-should have [the Activity Extension](http://mercurial.selenic.com/wiki/ActivityExtension) installed.
+The project that this task is used, should use [Mercurial](http://mercurial.selenic.com/) as 
+its version control system and the current user should have
+[the Activity Extension](http://mercurial.selenic.com/wiki/ActivityExtension) installed.
 
 
 ## Getting Started
@@ -42,13 +43,13 @@ Current values shown are the defaults.
     main: {
       options: {
         split: ['none'], // 'none', 'authors', 'files', 'branches', 'directories',
-        filenamePrefix: 'activity-',
+        filenamePrefix: 'activity',
         width: 800,
         height: 600,
         datemin: '', // yyyy-mm-dd, if left empty, will use all available time
         datemax: '', // yyyy-mm-dd
-        interval: '1w', // int followed by: m = months (unsupported: w = weeks, d = days, h = hours)
-        iterations: 10, // number of iterations the interval should be useds
+        interval: '3m', // int followed by: y = years, m = months, w = weeks, d = days, h = hours
+        iterations: 4, // number of iterations the interval should be useds
         uselines: true,
         showtags: false,
         imagetitle: '', // prefix which will be followed by the split if not none and time span
@@ -68,14 +69,14 @@ grunt hgactivity
 
 ## Dependencies
 
- * Mercurial version control system
- * Activity extension for Mercurial
+ * [Mercurial version control system](http://mercurial.selenic.com/)
+ * [Activity extension for Mercurial](http://mercurial.selenic.com/wiki/ActivityExtension)
  * [moment for internal date handling](http://momentjs.com/)
 
   
 ## Changelog
 
- * 2013-07-15    v0.1.0    Initial release
+ * 2013-07-23    v0.1.0    Initial release
 
 
 ## License

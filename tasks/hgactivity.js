@@ -11,14 +11,17 @@ module.exports = function(grunt) {
 
   grunt.registerMultiTask('hgactivity', 'Repository activity', function() {
     var moment = require('moment'),
-      dateFormat = 'YYYY-MM-DD';
+      dateFormat = 'YYYY-MM-DD', // The format expected by 'hg activity'
+      args = ['activity'], // Command line arguments for 'hg activity'
+      dates = [], // Collection of dates used as delimiters of each time span, if interval used
+      commands = []; // List of commands that are finally called
 
     var done = this.async();
 
     // Default options which will be extended with user defined
     var options = this.options({
       split: ['none'], // 'none', 'authors', 'files', 'branches', 'directories',
-      filenamePrefix: 'activity-',
+      filenamePrefix: 'activity',
       width: 800,
       height: 600,
       datemin: '', // yyyy-mm-dd, if left empty, will use all available time
@@ -30,10 +33,15 @@ module.exports = function(grunt) {
       imagetitle: '', // prefix which will be followed by the split if not none and time span
       cwindow: 2
     });
-    console.dir(options);
 
-    // Command line arguments for 'hg activity'
-    var args = ['activity'];
+    // moment.js keywords
+    var timeWords = {
+      y: 'years',
+      m: 'months', // default
+      w: 'weeks',
+      d: 'days',
+      h: 'hours'
+    };
 
     // Options that can be used as such and prepended with --
     ['width', 'height', 'cwindow'].forEach(function (key) {
@@ -50,27 +58,15 @@ module.exports = function(grunt) {
       }
     });
 
-    var dates = [];
-    
-    // moment.js keywords
-    var timeWords = {
-      y: 'years',
-      m: 'months', // default
-      w: 'weeks',
-      d: 'days',
-      h: 'hours'
-    };
-
     // Time span for each picture. This is the only option that triggers multiple image generation
-    if (options.interval !== '') {
+    if (typeof options.interval === 'string' && options.interval !== '') {
+    
       var span = options.interval.substr(-1);
-      console.log('span: ' + span);
       if (!timeWords.hasOwnProperty(span)) {
         span = 'm';
       }
 
       var counter = parseInt(options.interval, 10);
-      console.log('counter: ' + counter);
 
       // Start from today if date max is missing...
       if (options.datemax === '') {
@@ -78,7 +74,7 @@ module.exports = function(grunt) {
         options.datemax = moment().format(dateFormat);
       }
       
-      // How about datemin?
+      // How about datemin? Currently there are no checks for it...
 
       var max = moment(options.datemax, dateFormat);
       dates.push(options.datemax);
@@ -97,20 +93,31 @@ module.exports = function(grunt) {
       });
     }
 
-    // Build the commands
-    var commands = [];
-
     // The amount of split options defines the amount of outer loops.
     // Inner loop count depends of the time span and interval.
     options.split.forEach(function (split) {
-      var filename = options.filenamePrefix + (split !== 'none' ? split + '-' : '');
+      var filename = options.filenamePrefix + (split !== 'none' ? '_' + split : '');
+      var title = (options.imagetitle.length > 0 ? options.imagetitle : '') + 
+        (split !== 'none' ? split : '');
 
-      for (var i = 0; i < dates.length - 1; i++) {
-        var hgArgs = args.concat(
-          '--datemin', dates[i + 1], '--datemax', dates[i],
-          '--filename', (filename + i + '.png')
-        );
-        commands.push(hgArgs);
+      // Need at least one pair of dates
+      if (dates.length > 1) {
+        for (var i = 0; i < dates.length - 1; i++) {
+          commands.push(args.concat(
+            '--split', split,
+            '--datemin', dates[i + 1], '--datemax', dates[i],
+            '--filename', (filename + '_' + dates[i + 1] + '_' + dates[i] + '.png'),
+            '--imagetitle', ('"' + title + ': ' + dates[i + 1] + ' - ' + dates[i] + '"')
+          ));
+        }
+      }
+      else {
+        // Assume that there is no intervals needed, thus one per split.
+        commands.push(args.concat(
+          '--split', split,
+          '--filename', filename + '.png',
+          '--imagetitle', '"' + title + '"'
+        ));
       }
     });
 
