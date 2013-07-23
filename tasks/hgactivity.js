@@ -26,7 +26,7 @@ module.exports = function(grunt) {
       height: 600,
       datemin: '', // yyyy-mm-dd, if left empty, will use all available time
       datemax: '', // yyyy-mm-dd
-      interval: '3m', // int followed by: y = years, m = months, w = weeks, d = days, h = hours
+      interval: '3m', // int followed by: y = years, m = months, w = weeks, d = days
       iterations: 4, // number of iterations the interval should be useds
       uselines: true,
       showtags: false,
@@ -39,8 +39,7 @@ module.exports = function(grunt) {
       y: 'years',
       m: 'months', // default
       w: 'weeks',
-      d: 'days',
-      h: 'hours'
+      d: 'days'
     };
 
     // Options that can be used as such and prepended with --
@@ -103,11 +102,13 @@ module.exports = function(grunt) {
       // Need at least one pair of dates
       if (dates.length > 1) {
         for (var i = 0; i < dates.length - 1; i++) {
+          var startDate = dates[i + 1]; // TODO: add a day to avoid overlapping
+          var endDate = dates[i];
           commands.push(args.concat(
             '--split', split,
-            '--datemin', dates[i + 1], '--datemax', dates[i],
-            '--filename', (filename + '_' + dates[i + 1] + '_' + dates[i] + '.png'),
-            '--imagetitle', ('"' + title + ': ' + dates[i + 1] + ' - ' + dates[i] + '"')
+            '--datemin', startDate, '--datemax', endDate,
+            '--filename', (filename + '_' + startDate + '_' + endDate + '.png'),
+            '--imagetitle', ('"' + title + ': ' + startDate + ' - ' + endDate + '"')
           ));
         }
       }

@@ -48,7 +48,7 @@ Current values shown are the defaults.
         height: 600,
         datemin: '', // yyyy-mm-dd, if left empty, will use all available time
         datemax: '', // yyyy-mm-dd
-        interval: '3m', // int followed by: y = years, m = months, w = weeks, d = days, h = hours
+        interval: '3m', // int followed by: y = years, m = months, w = weeks, d = days
         iterations: 4, // number of iterations the interval should be useds
         uselines: true,
         showtags: false,
@@ -126,7 +126,8 @@ grunt hgactivity:yearly
   
 ## Changelog
 
- * 2013-07-23    v0.1.0    Initial release
+ * 2013-07-24   v0.1.1    Removed 'hours' time span option
+ * 2013-07-23   v0.1.0    Initial release
 
 
 ## License
