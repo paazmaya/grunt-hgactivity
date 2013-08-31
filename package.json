@@ -26,6 +26,9 @@
     "grunt": "~0.4.1",
     "moment": "~2.1.0"
   },
+  "peerDependencies": {
+    "grunt": "~0.4.1"
+  },
   "keywords": [
     "hg",
     "mercurial",
