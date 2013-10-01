@@ -7,6 +7,7 @@ The project that this task is used, should use [Mercurial](http://mercurial.sele
 its version control system and the current user should have
 [the Activity Extension](http://mercurial.selenic.com/wiki/ActivityExtension) installed.
 
+[![Dependency Status](https://gemnasium.com/paazmaya/grunt-hgactivity.png)](https://gemnasium.com/paazmaya/grunt-hgactivity)
 
 ## Getting Started
 
