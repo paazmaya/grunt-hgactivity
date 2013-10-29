@@ -137,3 +137,7 @@ grunt hgactivity:yearly
 Copyright (c) 2013 Juga Paazmaya <olavic@gmail.com>
 
 Licensed under the MIT license.
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/paazmaya/grunt-hgactivity/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
