@@ -22,9 +22,12 @@
     }
   ],
   "main": "Gruntfile.js",
+  "engines": {
+    "node": ">= 0.10.0"
+  },
   "dependencies": {
     "grunt": "~0.4.1",
-    "moment": "~2.2.0"
+    "moment": "~2.4.0"
   },
   "peerDependencies": {
     "grunt": "~0.4.1"
