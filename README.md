@@ -8,6 +8,8 @@ its version control system and the current user should have
 [the Activity Extension](http://mercurial.selenic.com/wiki/ActivityExtension) installed.
 
 [![Dependency Status](https://gemnasium.com/paazmaya/grunt-hgactivity.png)](https://gemnasium.com/paazmaya/grunt-hgactivity)
+[![Code Climate](https://codeclimate.com/github/paazmaya/grunt-hgactivity.png)](https://codeclimate.com/github/paazmaya/grunt-hgactivity)
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/paazmaya/grunt-hgactivity/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 
 ## Getting Started
 
@@ -139,5 +141,4 @@ Copyright (c) 2013 Juga Paazmaya <olavic@gmail.com>
 Licensed under the MIT license.
 
 
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/paazmaya/grunt-hgactivity/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 
