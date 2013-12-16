@@ -10,11 +10,11 @@ module.exports = function(grunt) {
   'use strict';
 
   grunt.registerMultiTask('hgactivity', 'Repository activity', function() {
-    var moment = require('moment'),
-      dateFormat = 'YYYY-MM-DD', // The format expected by 'hg activity'
-      args = ['activity'], // Command line arguments for 'hg activity'
-      dates = [], // Collection of dates used as delimiters of each time span, if interval used
-      commands = []; // List of commands that are finally called
+    var moment = require('moment');
+    var dateFormat = 'YYYY-MM-DD'; // The format expected by 'hg activity'
+    var args = ['activity']; // Command line arguments for 'hg activity'
+    var dates = []; // Collection of dates used as delimiters of each time span, if interval used
+    var commands = []; // List of commands that are finally called
 
     var done = this.async();
 
@@ -135,7 +135,7 @@ module.exports = function(grunt) {
 
       console.log('hg ' + args.join(' '));
 
-      var child = grunt.util.spawn({
+      grunt.util.spawn({
         cmd: 'hg',
         args: args
       }, function (error, result, code) {
