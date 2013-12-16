@@ -1,5 +1,7 @@
 # grunt-hgactivity
 
+> Visualise activity in Mercurial repository
+
 Provides a Grunt task that runs the command 'hg activity' with the given options.
 This task can be configured to split the activity graphic based on the given time span.
 
@@ -14,15 +16,19 @@ its version control system and the current user should have
 ## Getting Started
 
 Add this to your project's `Gruntfile.js` gruntfile:
+
 ```js
 grunt.loadNpmTasks('grunt-hgactivity');
 ```
 
 Then add "grunt-hgactivity" to your package.json dependencies. This can be done with:
+
 ```js
 npm install grunt-hgactivity --save-dev
 ```
+
 Or by manually editing the "package.json" by adding the following line inside `devDependencies` object:
+
 ```js
   "grunt-hgactivity": "~0.1.2"
 ```
@@ -116,6 +122,7 @@ hgactivity: {
 ```
 
 Now to run a specific task, the following command can be used:
+
 ```js
 grunt hgactivity:yearly
 ```
