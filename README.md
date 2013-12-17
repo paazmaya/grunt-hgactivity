@@ -12,6 +12,7 @@ its version control system and the current user should have
 [![Dependency Status](https://gemnasium.com/paazmaya/grunt-hgactivity.png)](https://gemnasium.com/paazmaya/grunt-hgactivity)
 [![Code Climate](https://codeclimate.com/github/paazmaya/grunt-hgactivity.png)](https://codeclimate.com/github/paazmaya/grunt-hgactivity)
 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/paazmaya/grunt-hgactivity/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+[![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
 
 ## Getting Started
 
