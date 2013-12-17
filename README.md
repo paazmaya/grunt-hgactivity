@@ -146,7 +146,7 @@ grunt hgactivity:yearly
 
 Copyright (c) 2013 Juga Paazmaya <olavic@gmail.com>
 
-Licensed under the MIT license.
+Licensed under the [MIT license](LICENSE-MIT).
 
 
 
