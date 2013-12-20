@@ -133,20 +133,20 @@ module.exports = function(grunt) {
 
     var looper = function (args) {
 
-      console.log('hg ' + args.join(' '));
+      grunt.log.writeln('hg ' + args.join(' '));
 
       grunt.util.spawn({
         cmd: 'hg',
         args: args
       }, function (error, result, code) {
         if (error) {
-          //throw error;
+          throw error;
         }
         grunt.log.writeln(result.stdout);
         grunt.log.writeln(result.stderr);
         grunt.log.writeln(code + ' - ' + result);
         if (code !== 0) {
-          //return grunt.warn(String(code));
+          return grunt.warn(String(code));
         }
         next();
       });
