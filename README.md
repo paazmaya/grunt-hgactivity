@@ -31,7 +31,7 @@ npm install grunt-hgactivity --save-dev
 Or by manually editing the "package.json" by adding the following line inside `devDependencies` object:
 
 ```js
-  "grunt-hgactivity": "~0.1.2"
+  "grunt-hgactivity": "~0.1.3"
 ```
 
 Later on it would be possible to install the plugin with the command `npm install`
@@ -137,6 +137,7 @@ grunt hgactivity:yearly
   
 ## Changelog
 
+ * 2013-12-20   v0.1.3    Grunt migrated to 0.4.2 (which was trivial as changing version number). Eslint instead of JSHint
  * 2013-07-24   v0.1.2    Failed to update version numbers in previous tagged release
  * 2013-07-24   v0.1.1    Removed 'hours' time span option
  * 2013-07-23   v0.1.0    Initial release
