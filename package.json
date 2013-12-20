@@ -31,14 +31,14 @@
     "node": ">= 0.10.0"
   },
   "dependencies": {
-    "grunt": "~0.4.1",
+    "grunt": "~0.4.2",
     "moment": "~2.4.0"
   },
   "devDependencies": {
     "grunt-contrib-jshint": "~0.7.0"
   },
   "peerDependencies": {
-    "grunt": "~0.4.1"
+    "grunt": "~0.4.2"
   },
   "keywords": [
     "hg",
