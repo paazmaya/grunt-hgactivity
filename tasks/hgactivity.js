@@ -24,8 +24,8 @@ module.exports = function(grunt) {
       filenamePrefix: 'activity',
       width: 800,
       height: 600,
-      datemin: '', // yyyy-mm-dd, if left empty, will use all available time
-      datemax: '', // yyyy-mm-dd
+      datemin: '', // yyyy-mm-dd, if left empty, will use 6 months ago
+      datemax: '', // yyyy-mm-dd, if empty will use today
       interval: '3m', // int followed by: y = years, m = months, w = weeks, d = days
       iterations: 4, // number of iterations the interval should be useds
       uselines: true,
@@ -72,8 +72,14 @@ module.exports = function(grunt) {
         // Use today
         options.datemax = moment().format(dateFormat);
       }
-      
-      // How about datemin? Currently there are no checks for it...
+
+      /*
+      FIXME: Belongs somewhere else...
+      if (options.datemin === '') {
+        // Use 6 months ago
+        options.datemin = moment().subtract('M', 6).format(dateFormat);
+      }
+      */
 
       var max = moment(options.datemax, dateFormat);
       dates.push(options.datemax);
@@ -91,6 +97,9 @@ module.exports = function(grunt) {
         }
       });
     }
+    
+    //console.log('Options after processing:');
+    //console.dir(options);
 
     // The amount of split options defines the amount of outer loops.
     // Inner loop count depends of the time span and interval.

@@ -56,8 +56,8 @@ Current values shown are the defaults.
         filenamePrefix: 'activity',
         width: 800,
         height: 600,
-        datemin: '', // yyyy-mm-dd, if left empty, will use all available time
-        datemax: '', // yyyy-mm-dd
+        datemin: '', // yyyy-mm-dd, if left empty, will use 6 months ago
+        datemax: '', // yyyy-mm-dd, if empty will use today
         interval: '3m', // int followed by: y = years, m = months, w = weeks, d = days
         iterations: 4, // number of iterations the interval should be useds
         uselines: true,
