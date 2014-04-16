@@ -21,7 +21,7 @@ module.exports = function(grunt) {
 
   grunt.loadTasks('tasks');
 
-  grunt.loadNpmTasks('grunt-eslint');
+  require('jit-grunt')(grunt);
 
   grunt.registerTask('default', ['test']);
   grunt.registerTask('test', ['eslint']);
