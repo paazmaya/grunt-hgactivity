@@ -32,10 +32,10 @@
   },
   "dependencies": {
     "grunt": "^0.4",
-    "moment": "^2.5"
+    "moment": "^2.6"
   },
   "devDependencies": {
-    "grunt-eslint": "^0.3"
+    "grunt-eslint": "^0.4"
   },
   "peerDependencies": {
     "grunt": "^0.4"
