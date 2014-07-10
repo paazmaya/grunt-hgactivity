@@ -1,15 +1,15 @@
-/*
+/**
  * grunt-hgactivity
  * https://github.com/paazmaya/grunt-hgactivity
  *
- * Copyright (c) 2013 Juga Paazmaya <olavic@gmail.com>
+ * Copyright (c) Juga Paazmaya <olavic@gmail.com>
  * Licensed under the MIT license.
  */
+'use strict';
 
-module.exports = function(grunt) {
-  'use strict';
+module.exports = function hgactivity(grunt) {
 
-  grunt.registerMultiTask('hgactivity', 'Repository activity', function() {
+  grunt.registerMultiTask('hgactivity', 'Repository activity', function register() {
     var moment = require('moment');
     var dateFormat = 'YYYY-MM-DD'; // The format expected by 'hg activity'
     var args = ['activity']; // Command line arguments for 'hg activity'
@@ -43,7 +43,7 @@ module.exports = function(grunt) {
     };
 
     // Options that can be used as such and prepended with --
-    ['width', 'height', 'cwindow'].forEach(function (key) {
+    ['width', 'height', 'cwindow'].forEach(function asisEach(key) {
       if (options.hasOwnProperty(key)) {
         args.push('--' + key);
         args.push(options[key]);
@@ -51,7 +51,7 @@ module.exports = function(grunt) {
     });
 
     // Boolean options
-    ['uselines', 'showtags'].forEach(function (key) {
+    ['uselines', 'showtags'].forEach(function boolEach(key) {
       if (options.hasOwnProperty(key) && options[key] === true) {
         args.push('--' + key);
       }
@@ -59,7 +59,7 @@ module.exports = function(grunt) {
 
     // Time span for each picture. This is the only option that triggers multiple image generation
     if (typeof options.interval === 'string' && options.interval !== '') {
-    
+
       var span = options.interval.substr(-1);
       if (!timeWords.hasOwnProperty(span)) {
         span = 'm';
@@ -90,22 +90,22 @@ module.exports = function(grunt) {
     }
     else {
       // Use possible dates as such and only for one time span
-      ['datemin', 'datemax'].forEach(function (key) {
+      ['datemin', 'datemax'].forEach(function dateEach(key) {
         if (options.hasOwnProperty(key) && options[key] !== '') {
           args.push('--' + key);
           args.push(options[key]);
         }
       });
     }
-    
+
     //console.log('Options after processing:');
     //console.dir(options);
 
     // The amount of split options defines the amount of outer loops.
     // Inner loop count depends of the time span and interval.
-    options.split.forEach(function (split) {
+    options.split.forEach(function splitEach(split) {
       var filename = options.filenamePrefix + (split !== 'none' ? '_' + split : '');
-      var title = (options.imagetitle.length > 0 ? options.imagetitle : '') + 
+      var title = (options.imagetitle.length > 0 ? options.imagetitle : '') +
         (split !== 'none' ? split : '');
 
       // Need at least one pair of dates
@@ -131,23 +131,14 @@ module.exports = function(grunt) {
       }
     });
 
-    var next = function () {
-      if (commands.length > 0) {
-        looper(commands.pop());
-      }
-      else {
-        done();
-      }
-    };
-
-    var looper = function (args) {
+    var looper = function looper(args, next) {
 
       grunt.log.writeln('hg ' + args.join(' '));
 
       grunt.util.spawn({
         cmd: 'hg',
         args: args
-      }, function (error, result, code) {
+      }, function handler(error, result, code) {
         if (error) {
           throw error;
         }
@@ -157,8 +148,17 @@ module.exports = function(grunt) {
         if (code !== 0) {
           return grunt.warn(String(code));
         }
-        next();
+        next.call(this);
       });
+    };
+
+    var next = function next() {
+      if (commands.length > 0) {
+        looper(commands.pop(), next);
+      }
+      else {
+        done();
+      }
     };
 
     // Start looping.
