@@ -32,7 +32,7 @@
   },
   "dependencies": {
     "grunt": "^0.4",
-    "moment": "^2.7"
+    "moment": "^2.8"
   },
   "devDependencies": {
     "grunt-eslint": "^0.6",
