@@ -35,9 +35,9 @@
     "moment": "^2.8"
   },
   "devDependencies": {
-    "grunt-eslint": "^0.6",
+    "grunt-eslint": "^1.0",
     "jit-grunt": "^0.7",
-    "time-grunt": "^0.3"
+    "time-grunt": "^0.4"
   },
   "peerDependencies": {
     "grunt": "^0.4"
