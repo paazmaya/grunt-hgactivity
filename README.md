@@ -2,7 +2,7 @@
 
 > Visualise activity in Mercurial repository
 
-Provides a Grunt task that runs the command 'hg activity' with the given options.
+Provides a Grunt task that runs the command `hg activity` with the given options.
 This task can be configured to split the activity graphic based on the given time span.
 
 The project that this task is used, should use [Mercurial](http://mercurial.selenic.com/) as 
@@ -16,13 +16,13 @@ its version control system and the current user should have
 
 ## Getting Started
 
-Add this to your project's `Gruntfile.js` gruntfile:
+Add this to your project's `Gruntfile.js` configuration:
 
 ```js
 grunt.loadNpmTasks('grunt-hgactivity');
 ```
 
-Then add "grunt-hgactivity" to your package.json dependencies. This can be done with:
+Then add `grunt-hgactivity` to your "package.json" dependencies. This can be done with:
 
 ```js
 npm install grunt-hgactivity --save-dev
@@ -31,7 +31,7 @@ npm install grunt-hgactivity --save-dev
 Or by manually editing the "package.json" by adding the following line inside `devDependencies` object:
 
 ```js
-  "grunt-hgactivity": "~0.1.3"
+  "grunt-hgactivity": "~0.1"
 ```
 
 Later on it would be possible to install the plugin with the command `npm install`
@@ -137,17 +137,16 @@ grunt hgactivity:yearly
   
 ## Changelog
 
+ * 2014-08-23   v0.1.4    Dependencies updated
  * 2013-12-20   v0.1.3    Grunt migrated to 0.4.2 (which was trivial as changing version number). Eslint instead of JSHint
  * 2013-07-24   v0.1.2    Failed to update version numbers in previous tagged release
  * 2013-07-24   v0.1.1    Removed 'hours' time span option
  * 2013-07-23   v0.1.0    Initial release
 
+---
 
 ## License
 
-Copyright (c) 2013 Juga Paazmaya <olavic@gmail.com>
+Copyright (c) Juga Paazmaya <olavic@gmail.com>
 
 Licensed under the [MIT license](LICENSE-MIT).
-
-
-
