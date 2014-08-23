@@ -143,7 +143,6 @@ grunt hgactivity:yearly
  * 2013-07-24   v0.1.1    Removed 'hours' time span option
  * 2013-07-23   v0.1.0    Initial release
 
----
 
 ## License
 

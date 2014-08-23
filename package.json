@@ -36,11 +36,14 @@
   },
   "devDependencies": {
     "grunt-eslint": "^1.0",
-    "jit-grunt": "^0.7",
-    "time-grunt": "^0.4"
+    "jit-grunt": "^0.8",
+    "time-grunt": "^1.0"
   },
   "peerDependencies": {
     "grunt": "^0.4"
+  },
+  "scripts": {
+    "test": "node_modules/.bin/grunt test"
   },
   "keywords": [
     "hg",
