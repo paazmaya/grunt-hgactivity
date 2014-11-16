@@ -5,7 +5,7 @@
 Provides a Grunt task that runs the command `hg activity` with the given options.
 This task can be configured to split the activity graphic based on the given time span.
 
-The project that this task is used, should use [Mercurial](http://mercurial.selenic.com/) as 
+The project that this task is used, should use [Mercurial](http://mercurial.selenic.com/) as
 its version control system and the current user should have
 [the Activity Extension](http://mercurial.selenic.com/wiki/ActivityExtension) installed.
 
@@ -134,7 +134,21 @@ grunt hgactivity:yearly
  * [Activity extension for Mercurial](http://mercurial.selenic.com/wiki/ActivityExtension)
  * [moment for internal date handling](http://momentjs.com/)
 
-  
+### Acitivity Mercurial plugin troubleshooting for Windows
+
+Easiest way to fullfill the dependencies for the
+[Hg Activity Plugin](http://labs.freehackers.org/projects/hgactivity/wiki), is to
+install the [Scipy-stack](http://www.lfd.uci.edu/~gohlke/pythonlibs/#scipy-stack "Scipy-stack (experimental) is a meta package that contains numpy-MKL, scipy, matplotlib, ipython, pandas, sympy, nose and many of their dependencies (dateutil, setuptools, gmpy, Pillow, pygments, pyreadline, pytz, statsmodels, tornado").
+
+It might also be needed to manually edit the plugin code in order for it to find its requirements.
+Open the `activity/__init__.py` file and add the following lines on the top:
+
+```python
+import sys
+sys.path.append(r'C:\\Python27\\Lib\\site-packages')
+sys.path.append(r'C:\\Python27\\Lib')
+```
+
 ## Changelog
 
  * 2014-08-23   v0.1.4    Dependencies updated
