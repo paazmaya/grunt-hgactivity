@@ -9,10 +9,10 @@ The project that this task is used, should use [Mercurial](http://mercurial.sele
 its version control system and the current user should have
 [the Activity Extension](http://mercurial.selenic.com/wiki/ActivityExtension) installed.
 
-[![Dependency Status](https://gemnasium.com/paazmaya/grunt-hgactivity.png)](https://gemnasium.com/paazmaya/grunt-hgactivity)
-[![Code Climate](https://codeclimate.com/github/paazmaya/grunt-hgactivity.png)](https://codeclimate.com/github/paazmaya/grunt-hgactivity)
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/paazmaya/grunt-hgactivity/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
-[![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
+[![Dependency Status](https://img.shields.io/gemnasium/paazmaya/grunt-hgactivity.svg?style=flat-square)](https://gemnasium.com/paazmaya/grunt-hgactivity)
+[![Code Climate](https://img.shields.io/codeclimate/paazmaya/grunt-hgactivity.svg?style=flat-square)](https://codeclimate.com/github/paazmaya/grunt-hgactivity)
+[![Built with Grunt](http://img.shields.io/badge/Grunt-0.4-blue.svg?style=flat-square)](http://gruntjs.com/)
+[![Analytics](https://ga-beacon.appspot.com/UA-2643697-15/grunt-hgactivity/index)](https://github.com/igrigorik/ga-beacon)
 
 ## Getting Started
 
