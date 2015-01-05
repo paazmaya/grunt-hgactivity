@@ -77,14 +77,14 @@ module.exports = function hgactivity(grunt) {
       FIXME: Belongs somewhere else...
       if (options.datemin === '') {
         // Use 6 months ago
-        options.datemin = moment().subtract('M', 6).format(dateFormat);
+        options.datemin = moment().subtract(6, 'M').format(dateFormat);
       }
       */
 
       var max = moment(options.datemax, dateFormat);
       dates.push(options.datemax);
       for (var i = 0; i < options.iterations; i++) {
-        var before = max.subtract(timeWords[span], counter).format(dateFormat);
+        var before = max.subtract(counter, timeWords[span]).format(dateFormat);
         dates.push(before);
       }
     }
