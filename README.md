@@ -151,6 +151,7 @@ sys.path.append(r'C:\\Python27\\Lib')
 
 ## Changelog
 
+ * 2015-01-06   v0.1.5    Dependencies updated and Moment API changes
  * 2014-08-23   v0.1.4    Dependencies updated
  * 2013-12-20   v0.1.3    Grunt migrated to 0.4.2 (which was trivial as changing version number). Eslint instead of JSHint
  * 2013-07-24   v0.1.2    Failed to update version numbers in previous tagged release
