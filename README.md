@@ -134,7 +134,7 @@ grunt hgactivity:yearly
  * [Activity extension for Mercurial](http://mercurial.selenic.com/wiki/ActivityExtension)
  * [moment for internal date handling](http://momentjs.com/)
 
-### Acitivity Mercurial plugin troubleshooting for Windows
+### Activity Mercurial plugin troubleshooting for Windows
 
 Easiest way to fullfill the dependencies for the
 [Hg Activity Plugin](http://labs.freehackers.org/projects/hgactivity/wiki), is to
@@ -157,6 +157,10 @@ sys.path.append(r'C:\\Python27\\Lib')
  * 2013-07-24   v0.1.2    Failed to update version numbers in previous tagged release
  * 2013-07-24   v0.1.1    Removed 'hours' time span option
  * 2013-07-23   v0.1.0    Initial release
+
+## Contributing
+
+[Please refer to a GitHub blog post on how to create somewhat perfect pull request.](https://github.com/blog/1943-how-to-write-the-perfect-pull-request "How to write the perfect pull request")
 
 
 ## License
