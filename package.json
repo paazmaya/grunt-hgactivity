@@ -32,10 +32,10 @@
   },
   "dependencies": {
     "grunt": "~0.4",
-    "moment": "~2.8"
+    "moment": "~2.9"
   },
   "devDependencies": {
-    "grunt-eslint": "~3.0",
+    "grunt-eslint": "~5.1",
     "jit-grunt": "~0.9",
     "time-grunt": "~1.0"
   },
