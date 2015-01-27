@@ -98,9 +98,6 @@ module.exports = function hgactivity(grunt) {
       });
     }
 
-    //console.log('Options after processing:');
-    //console.dir(options);
-
     // The amount of split options defines the amount of outer loops.
     // Inner loop count depends of the time span and interval.
     options.split.forEach(function splitEach(split) {
