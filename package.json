@@ -30,7 +30,7 @@
     "moment": "~2.10"
   },
   "devDependencies": {
-    "grunt-eslint": "~17.2",
+    "grunt-eslint": "~17.3",
     "jit-grunt": "~0.9",
     "time-grunt": "~1.2"
   },
