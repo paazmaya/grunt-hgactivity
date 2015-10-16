@@ -58,8 +58,7 @@ module.exports = function hgactivity(grunt) {
     });
 
     // Time span for each picture. This is the only option that triggers multiple image generation
-    if (typeof options.interval === 'string' && options.interval !== '') {
-
+    var handleInterval = function handleInterval() {
       var span = options.interval.substr(-1);
       if (!timeWords.hasOwnProperty(span)) {
         span = 'm';
@@ -87,6 +86,10 @@ module.exports = function hgactivity(grunt) {
         var before = max.subtract(counter, timeWords[span]).format(dateFormat);
         dates.push(before);
       }
+    };
+
+    if (typeof options.interval === 'string' && options.interval !== '') {
+      handleInterval();
     }
     else {
       // Use possible dates as such and only for one time span
@@ -98,9 +101,7 @@ module.exports = function hgactivity(grunt) {
       });
     }
 
-    // The amount of split options defines the amount of outer loops.
-    // Inner loop count depends of the time span and interval.
-    options.split.forEach(function splitEach(split) {
+    var splitEach = function splitEach(split) {
       var filename = options.filenamePrefix + (split !== 'none' ? '_' + split : '');
       var title = (options.imagetitle.length > 0 ? options.imagetitle : '') +
         (split !== 'none' ? split : '');
@@ -113,8 +114,8 @@ module.exports = function hgactivity(grunt) {
           commands.push(args.concat(
             '--split', split,
             '--datemin', startDate, '--datemax', endDate,
-            '--filename', (filename + '_' + startDate + '_' + endDate + '.png'),
-            '--imagetitle', ('"' + title + ': ' + startDate + ' - ' + endDate + '"')
+            '--filename', filename + '_' + startDate + '_' + endDate + '.png',
+            '--imagetitle', '"' + title + ': ' + startDate + ' - ' + endDate + '"'
           ));
         }
       }
@@ -126,15 +127,19 @@ module.exports = function hgactivity(grunt) {
           '--imagetitle', '"' + title + '"'
         ));
       }
-    });
+    };
 
-    var looper = function looper(args, next) {
+    // The amount of split options defines the amount of outer loops.
+    // Inner loop count depends of the time span and interval.
+    options.split.forEach(splitEach);
 
-      grunt.log.writeln('hg ' + args.join(' '));
+    var looper = function looper(argus, next) {
+
+      grunt.log.writeln('hg ' + argus.join(' '));
 
       grunt.util.spawn({
         cmd: 'hg',
-        args: args
+        args: argus
       }, function handler(error, result, code) {
         if (error) {
           throw error;
