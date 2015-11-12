@@ -2,7 +2,7 @@
  * grunt-hgactivity
  * https://github.com/paazmaya/grunt-hgactivity
  *
- * Copyright (c) Juga Paazmaya <paazmaya@yahoo.com>
+ * Copyright (c) Juga Paazmaya <paazmaya@yahoo.com> (http://paazmaya.fi)
  * Licensed under the MIT license.
  */
 'use strict';
@@ -10,7 +10,7 @@
 module.exports = function hgactivity(grunt) {
 
   grunt.registerMultiTask('hgactivity', 'Repository activity', function register() {
-    var moment = require('moment');
+    const moment = require('moment');
     var dateFormat = 'YYYY-MM-DD'; // The format expected by 'hg activity'
     var args = ['activity']; // Command line arguments for 'hg activity'
     var dates = []; // Collection of dates used as delimiters of each time span, if interval used

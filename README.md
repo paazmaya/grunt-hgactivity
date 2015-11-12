@@ -16,6 +16,8 @@ its version control system and the current user should have
 
 ## Getting Started
 
+This plugin requires Grunt `~0.4` and Node.js minimum of `4.2.0`.
+
 Add this to your project's `Gruntfile.js` configuration:
 
 ```js
@@ -149,14 +151,14 @@ sys.path.append(r'C:\\Python27\\Lib\\site-packages')
 sys.path.append(r'C:\\Python27\\Lib')
 ```
 
-## Changelog
+## Version history
 
- * 2015-01-06   v0.1.5    Dependencies updated and Moment API changes
- * 2014-08-23   v0.1.4    Dependencies updated
- * 2013-12-20   v0.1.3    Grunt migrated to 0.4.2 (which was trivial as changing version number). Eslint instead of JSHint
- * 2013-07-24   v0.1.2    Failed to update version numbers in previous tagged release
- * 2013-07-24   v0.1.1    Removed 'hours' time span option
- * 2013-07-23   v0.1.0    Initial release
+ * `v0.1.5` (2015-01-06) Dependencies updated and Moment API changes
+ * `v0.1.4` (2014-08-23) Dependencies updated
+ * `v0.1.3` (2013-12-20) Grunt migrated to 0.4.2 (which was trivial as changing version number). Eslint instead of JSHint
+ * `v0.1.2` (2013-07-24) Failed to update version numbers in previous tagged release
+ * `v0.1.1` (2013-07-24) Removed 'hours' time span option
+ * `v0.1.0` (2013-07-23) Initial release
 
 ## Contributing
 
@@ -165,6 +167,6 @@ sys.path.append(r'C:\\Python27\\Lib')
 
 ## License
 
-Copyright (c) Juga Paazmaya <paazmaya@yahoo.com>
+Copyright (c) [Juga Paazmaya <paazmaya@yahoo.com>](http://paazmaya.fi)
 
 Licensed under the [MIT license](LICENSE).

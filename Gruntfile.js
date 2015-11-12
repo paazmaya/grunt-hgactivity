@@ -2,7 +2,7 @@
  * grunt-hgactivity
  * https://github.com/paazmaya/grunt-hgactivity
  *
- * Copyright (c) Juga Paazmaya <paazmaya@yahoo.com>
+ * Copyright (c) Juga Paazmaya <paazmaya@yahoo.com> (http://paazmaya.fi)
  * Licensed under the MIT license.
  */
 'use strict';
