@@ -13,7 +13,7 @@ module.exports = function gruntConf(grunt) {
   grunt.initConfig({
     eslint: {
       options: {
-        config: '.eslintrc',
+        config: '.eslintrc.json',
         format: 'stylish'
       },
       target: ['Gruntfile.js', 'tasks/*.js']
