@@ -1,7 +1,7 @@
 {
   "name": "grunt-hgactivity",
   "description": "Run Mercurial Activity extension to provide graphs for the given time spans",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "homepage": "https://github.com/paazmaya/grunt-hgactivity",
   "author": {
     "name": "Juga Paazmaya",
@@ -30,7 +30,7 @@
     "moment": "~2.11"
   },
   "devDependencies": {
-    "grunt-eslint": "~17.3",
+    "grunt-eslint": "~18.0",
     "jit-grunt": "~0.9",
     "time-grunt": "~1.3"
   },

@@ -7,10 +7,11 @@
  */
 'use strict';
 
+const moment = require('moment');
+
 module.exports = function hgactivity(grunt) {
 
   grunt.registerMultiTask('hgactivity', 'Repository activity', function register() {
-    const moment = require('moment');
     var dateFormat = 'YYYY-MM-DD'; // The format expected by 'hg activity'
     var args = ['activity']; // Command line arguments for 'hg activity'
     var dates = []; // Collection of dates used as delimiters of each time span, if interval used
@@ -148,9 +149,11 @@ module.exports = function hgactivity(grunt) {
         grunt.log.writeln(result.stderr);
         grunt.log.writeln(code + ' - ' + result);
         if (code !== 0) {
-          return grunt.warn(String(code));
+          grunt.warn(String(code));
         }
-        next.call(this);
+        else {
+          next.call(this);
+        }
       });
     };
 
