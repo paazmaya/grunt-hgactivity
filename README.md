@@ -16,7 +16,8 @@ its version control system and the current user should have
 
 ## Getting Started
 
-This plugin requires Grunt `~0.4` and Node.js minimum of `4.2.0`.
+This plugin requires [Grunt](http://gruntjs.com/) `~0.4` and [Node.js](https://nodejs.org/en/)
+version to be minimum of `4.2.0`, which is the Long Term Support (LTS) version.
 
 Add this to your project's `Gruntfile.js` configuration:
 
@@ -153,20 +154,29 @@ sys.path.append(r'C:\\Python27\\Lib')
 
 ## Version history
 
- * `v0.1.5` (2015-01-06) Dependencies updated and Moment API changes
- * `v0.1.4` (2014-08-23) Dependencies updated
- * `v0.1.3` (2013-12-20) Grunt migrated to 0.4.2 (which was trivial as changing version number). Eslint instead of JSHint
- * `v0.1.2` (2013-07-24) Failed to update version numbers in previous tagged release
- * `v0.1.1` (2013-07-24) Removed 'hours' time span option
- * `v0.1.0` (2013-07-23) Initial release
+* `v0.1.6` (2016-02-15)
+  - Dependency updates
+  - Gotta have at least Node.js versions `4.2.0` (LTS)
+* `v0.1.5` (2015-01-06)
+  - Dependencies updated and Moment API changes
+* `v0.1.4` (2014-08-23)
+  - Dependencies updated
+* `v0.1.3` (2013-12-20)
+  - Grunt migrated to 0.4.2 (which was trivial as changing version number)
+  - ESLint instead of JSHint
+* `v0.1.2` (2013-07-24)
+  - Failed to update version numbers in previous tagged release
+* `v0.1.1` (2013-07-24)
+  - Removed 'hours' time span option
+* `v0.1.0` (2013-07-23)
+  - Initial release
 
 ## Contributing
 
 [Please refer to a GitHub blog post on how to create somewhat perfect pull request.](https://github.com/blog/1943-how-to-write-the-perfect-pull-request "How to write the perfect pull request")
 
-
 ## License
 
-Copyright (c) [Juga Paazmaya <paazmaya@yahoo.com>](http://paazmaya.fi)
+Copyright (c) [Juga Paazmaya](http://www.paazmaya.fi) <paazmaya@yahoo.com>
 
 Licensed under the [MIT license](LICENSE).
