@@ -177,6 +177,6 @@ sys.path.append(r'C:\\Python27\\Lib')
 
 ## License
 
-Copyright (c) [Juga Paazmaya](http://www.paazmaya.fi) <paazmaya@yahoo.com>
+Copyright (c) [Juga Paazmaya](http://paazmaya.fi) <paazmaya@yahoo.com>
 
 Licensed under the [MIT license](LICENSE).
