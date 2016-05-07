@@ -9,18 +9,28 @@
 
 const moment = require('moment');
 
+// The format expected by 'hg activity'
+const dateFormat = 'YYYY-MM-DD';
+
+// moment.js keywords
+const timeWords = {
+  y: 'years',
+  m: 'months', // default
+  w: 'weeks',
+  d: 'days'
+};
+
 module.exports = function hgactivity(grunt) {
 
   grunt.registerMultiTask('hgactivity', 'Repository activity', function register() {
-    var dateFormat = 'YYYY-MM-DD'; // The format expected by 'hg activity'
     var args = ['activity']; // Command line arguments for 'hg activity'
     var dates = []; // Collection of dates used as delimiters of each time span, if interval used
     var commands = []; // List of commands that are finally called
 
-    var done = this.async();
+    const done = this.async();
 
     // Default options which will be extended with user defined
-    var options = this.options({
+    const options = this.options({
       split: ['none'], // 'none', 'authors', 'files', 'branches', 'directories',
       filenamePrefix: 'activity',
       width: 800,
@@ -34,14 +44,6 @@ module.exports = function hgactivity(grunt) {
       imagetitle: '', // prefix which will be followed by the split if not none and time span
       cwindow: 2
     });
-
-    // moment.js keywords
-    var timeWords = {
-      y: 'years',
-      m: 'months', // default
-      w: 'weeks',
-      d: 'days'
-    };
 
     // Options that can be used as such and prepended with --
     ['width', 'height', 'cwindow'].forEach(function asisEach(key) {
@@ -59,13 +61,13 @@ module.exports = function hgactivity(grunt) {
     });
 
     // Time span for each picture. This is the only option that triggers multiple image generation
-    var handleInterval = function handleInterval() {
-      var span = options.interval.substr(-1);
+    const handleInterval = function handleInterval() {
+      let span = options.interval.substr(-1);
       if (!timeWords.hasOwnProperty(span)) {
         span = 'm';
       }
 
-      var counter = parseInt(options.interval, 10);
+      const counter = parseInt(options.interval, 10);
 
       // Start from today if date max is missing...
       if (options.datemax === '') {
@@ -81,10 +83,10 @@ module.exports = function hgactivity(grunt) {
       }
       */
 
-      var max = moment(options.datemax, dateFormat);
+      const max = moment(options.datemax, dateFormat);
       dates.push(options.datemax);
-      for (var i = 0; i < options.iterations; i++) {
-        var before = max.subtract(counter, timeWords[span]).format(dateFormat);
+      for (let i = 0; i < options.iterations; i++) {
+        const before = max.subtract(counter, timeWords[span]).format(dateFormat);
         dates.push(before);
       }
     };
@@ -102,16 +104,16 @@ module.exports = function hgactivity(grunt) {
       });
     }
 
-    var splitEach = function splitEach(split) {
-      var filename = options.filenamePrefix + (split !== 'none' ? '_' + split : '');
-      var title = (options.imagetitle.length > 0 ? options.imagetitle : '') +
+    const splitEach = function splitEach(split) {
+      const filename = options.filenamePrefix + (split !== 'none' ? '_' + split : '');
+      const title = (options.imagetitle.length > 0 ? options.imagetitle : '') +
         (split !== 'none' ? split : '');
 
       // Need at least one pair of dates
       if (dates.length > 1) {
-        for (var i = 0; i < dates.length - 1; i++) {
-          var startDate = dates[i + 1]; // TODO: add a day to avoid overlapping
-          var endDate = dates[i];
+        for (let i = 0; i < dates.length - 1; i++) {
+          const startDate = dates[i + 1]; // TODO: add a day to avoid overlapping
+          const endDate = dates[i];
           commands.push(args.concat(
             '--split', split,
             '--datemin', startDate, '--datemax', endDate,
@@ -134,7 +136,7 @@ module.exports = function hgactivity(grunt) {
     // Inner loop count depends of the time span and interval.
     options.split.forEach(splitEach);
 
-    var looper = function looper(argus, next) {
+    const looper = function looper(argus, next) {
 
       grunt.log.writeln('hg ' + argus.join(' '));
 
@@ -157,7 +159,7 @@ module.exports = function hgactivity(grunt) {
       });
     };
 
-    var next = function next() {
+    const next = function next() {
       if (commands.length > 0) {
         looper(commands.pop(), next);
       }
