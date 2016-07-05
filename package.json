@@ -27,11 +27,11 @@
   },
   "dependencies": {
     "grunt": "~1.0",
-    "moment": "~2.13"
+    "moment": "~2.14"
   },
   "devDependencies": {
     "eslint-config-paazmaya": "^2.1.0",
-    "grunt-eslint": "~18.1",
+    "grunt-eslint": "~19.0",
     "jit-grunt": "~0.10",
     "time-grunt": "~1.3"
   },
