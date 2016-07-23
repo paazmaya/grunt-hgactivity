@@ -22,10 +22,12 @@ const timeWords = {
 
 module.exports = function hgactivity(grunt) {
 
+  const hasOwnProperty = Object.prototype.hasOwnProperty;
+
   grunt.registerMultiTask('hgactivity', 'Repository activity', function register() {
-    var args = ['activity']; // Command line arguments for 'hg activity'
-    var dates = []; // Collection of dates used as delimiters of each time span, if interval used
-    var commands = []; // List of commands that are finally called
+    const args = ['activity']; // Command line arguments for 'hg activity'
+    const dates = []; // Collection of dates used as delimiters of each time span, if interval used
+    const commands = []; // List of commands that are finally called
 
     const done = this.async();
 
@@ -47,7 +49,7 @@ module.exports = function hgactivity(grunt) {
 
     // Options that can be used as such and prepended with --
     ['width', 'height', 'cwindow'].forEach(function asisEach(key) {
-      if (options.hasOwnProperty(key)) {
+      if (hasOwnProperty.call(options, key)) {
         args.push('--' + key);
         args.push(options[key]);
       }
@@ -55,7 +57,7 @@ module.exports = function hgactivity(grunt) {
 
     // Boolean options
     ['uselines', 'showtags'].forEach(function boolEach(key) {
-      if (options.hasOwnProperty(key) && options[key] === true) {
+      if (hasOwnProperty.call(options, key) && options[key] === true) {
         args.push('--' + key);
       }
     });
@@ -63,7 +65,7 @@ module.exports = function hgactivity(grunt) {
     // Time span for each picture. This is the only option that triggers multiple image generation
     const handleInterval = function handleInterval() {
       let span = options.interval.substr(-1);
-      if (!timeWords.hasOwnProperty(span)) {
+      if (!hasOwnProperty.call(timeWords, span)) {
         span = 'm';
       }
 
@@ -97,7 +99,7 @@ module.exports = function hgactivity(grunt) {
     else {
       // Use possible dates as such and only for one time span
       ['datemin', 'datemax'].forEach(function dateEach(key) {
-        if (options.hasOwnProperty(key) && options[key] !== '') {
+        if (hasOwnProperty.call(options, key) && options[key] !== '') {
           args.push('--' + key);
           args.push(options[key]);
         }
