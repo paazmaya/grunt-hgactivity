@@ -9,6 +9,7 @@ The project that this task is used, should use [Mercurial](http://mercurial.sele
 its version control system and the current user should have
 [the Activity Extension](http://mercurial.selenic.com/wiki/ActivityExtension) installed.
 
+[![Build Status](https://semaphoreci.com/api/v1/paazmaya/grunt-hgactivity/branches/master/badge.svg)](https://semaphoreci.com/paazmaya/grunt-hgactivity)
 [![Dependency Status](https://img.shields.io/gemnasium/paazmaya/grunt-hgactivity.svg?style=flat-square)](https://gemnasium.com/paazmaya/grunt-hgactivity)
 [![Code Climate](https://img.shields.io/codeclimate/github/paazmaya/grunt-hgactivity.svg?style=flat-square)](https://codeclimate.com/github/paazmaya/grunt-hgactivity)
 [![Built with Grunt](http://img.shields.io/badge/Grunt-1.0-blue.svg?style=flat-square)](http://gruntjs.com/)
