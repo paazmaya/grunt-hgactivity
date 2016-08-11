@@ -9,21 +9,13 @@
 
 module.exports = function gruntConf(grunt) {
   require('time-grunt')(grunt); // Must be first item
+  require('jit-grunt')(grunt);
 
-  grunt.initConfig({
-    eslint: {
-      options: {
-        config: '.eslintrc.json',
-        format: 'stylish'
-      },
-      target: ['Gruntfile.js', 'tasks/*.js']
-    }
-  });
+  grunt.initConfig({});
 
   grunt.loadTasks('tasks');
 
-  require('jit-grunt')(grunt);
 
   grunt.registerTask('default', ['test']);
-  grunt.registerTask('test', ['eslint']);
+  grunt.registerTask('test', []);
 };

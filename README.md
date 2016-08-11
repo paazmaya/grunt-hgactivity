@@ -9,7 +9,7 @@ The project that this task is used, should use [Mercurial](http://mercurial.sele
 its version control system and the current user should have
 [the Activity Extension](http://mercurial.selenic.com/wiki/ActivityExtension) installed.
 
-[![Build Status](https://semaphoreci.com/api/v1/paazmaya/grunt-hgactivity/branches/master/badge.svg)](https://semaphoreci.com/paazmaya/grunt-hgactivity)
+[![Build Status](https://semaphoreci.com/api/v1/paazmaya/grunt-hgactivity/branches/master/shields_badge.svg)](https://semaphoreci.com/paazmaya/grunt-hgactivity)
 [![Dependency Status](https://img.shields.io/gemnasium/paazmaya/grunt-hgactivity.svg?style=flat-square)](https://gemnasium.com/paazmaya/grunt-hgactivity)
 [![Code Climate](https://img.shields.io/codeclimate/github/paazmaya/grunt-hgactivity.svg?style=flat-square)](https://codeclimate.com/github/paazmaya/grunt-hgactivity)
 [![Built with Grunt](http://img.shields.io/badge/Grunt-1.0-blue.svg?style=flat-square)](http://gruntjs.com/)
@@ -18,7 +18,9 @@ its version control system and the current user should have
 ## Getting Started
 
 This plugin requires [Grunt](http://gruntjs.com/) `~0.4` and [Node.js](https://nodejs.org/en/)
-version to be minimum of `4.2.0`, which is the Long Term Support (LTS) version.
+version to be minimum of `4.2.0`, which is the Long Term Support (LTS) version, and
+[Mercurial](http://mercurial.selenic.com/) with
+[`activity` extension](http://mercurial.selenic.com/wiki/ActivityExtension) to be installed.
 
 Add this to your project's `Gruntfile.js` configuration:
 
@@ -155,6 +157,9 @@ sys.path.append(r'C:\\Python27\\Lib')
 
 ## Version history
 
+* `v0.1.7` (2016-08-11)
+  - Dependencies are sure :tophat: up to date
+  - Use ESLint directly without the Grunt.js plugin
 * `v0.1.6` (2016-02-15)
   - Dependency updates
   - Gotta have at least Node.js versions `4.2.0` (LTS)
