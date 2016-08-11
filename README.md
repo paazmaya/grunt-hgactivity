@@ -157,9 +157,10 @@ sys.path.append(r'C:\\Python27\\Lib')
 
 ## Version history
 
-* `v0.1.7` (2016-08-11)
+* `v0.2.0` (2016-08-11)
+  - Grunt.js `v1.0.0` and onward
   - Dependencies are sure :tophat: up to date
-  - Use ESLint directly without the Grunt.js plugin
+  - Use shared ESLint configuration and use ESLint directly without the Grunt.js plugin
 * `v0.1.6` (2016-02-15)
   - Dependency updates
   - Gotta have at least Node.js versions `4.2.0` (LTS)
