@@ -5,6 +5,7 @@
  * Copyright (c) Juga Paazmaya <paazmaya@yahoo.com> (https://paazmaya.fi)
  * Licensed under the MIT license.
  */
+
 'use strict';
 
 const moment = require('moment');
@@ -107,9 +108,16 @@ module.exports = function hgactivity(grunt) {
     }
 
     const splitEach = function splitEach(split) {
-      const filename = options.filenamePrefix + (split !== 'none' ? '_' + split : '');
-      const title = (options.imagetitle.length > 0 ? options.imagetitle : '') +
-        (split !== 'none' ? split : '');
+      const divider = split !== 'none' ?
+        '_' + split :
+        '';
+      const filename = options.filenamePrefix + divider;
+      const title = (options.imagetitle.length > 0 ?
+        options.imagetitle :
+        '') +
+        (split !== 'none' ?
+        split :
+        '');
 
       // Need at least one pair of dates
       if (dates.length > 1) {
