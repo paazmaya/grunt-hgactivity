@@ -30,7 +30,7 @@
     "moment": "~2.15"
   },
   "devDependencies": {
-    "eslint": "^3.6.1",
+    "eslint": "^3.9.0",
     "eslint-config-paazmaya": "^3.0.0",
     "jit-grunt": "~0.10",
     "time-grunt": "~1.4"
