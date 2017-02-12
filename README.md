@@ -18,7 +18,7 @@ its version control system and the current user should have
 ## Getting Started
 
 This plugin requires [Grunt](http://gruntjs.com/) `~0.4` and [Node.js](https://nodejs.org/en/)
-version to be minimum of `4.2.0`, which is the Long Term Support (LTS) version, and
+version to be minimum of `6.9.5`, which is the Long Term Support (LTS) version, and
 [Mercurial](http://mercurial.selenic.com/) with
 [`activity` extension](http://mercurial.selenic.com/wiki/ActivityExtension) to be installed.
 
@@ -157,6 +157,8 @@ sys.path.append(r'C:\\Python27\\Lib')
 
 ## Version history
 
+* `v0.3.0` (2017)
+  - Minimum supported Node.js version is now `6.9.5` (LTS)
 * `v0.2.0` (2016-08-11)
   - Grunt.js `v1.0.0` and onward
   - Dependencies are sure :tophat: up to date
