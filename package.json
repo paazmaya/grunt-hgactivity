@@ -30,7 +30,7 @@
     "moment": "~2.18"
   },
   "devDependencies": {
-    "eslint": "^3.18.0",
+    "eslint": "^3.19.0",
     "eslint-config-paazmaya": "^3.2.0",
     "jit-grunt": "~0.10",
     "time-grunt": "~1.4"
@@ -40,7 +40,7 @@
   },
   "scripts": {
     "test": "grunt test",
-    "lint": "eslint -c .eslintrc.json Gruntfile.js tasks"
+    "lint": "eslint Gruntfile.js tasks"
   },
   "keywords": [
     "hg",
