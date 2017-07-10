@@ -17,7 +17,7 @@ its version control system and the current user should have
 
 ## Getting Started
 
-This plugin requires [Grunt](http://gruntjs.com/) `~0.4` and [Node.js](https://nodejs.org/en/)
+This plugin requires [Grunt](http://gruntjs.com/) `~1.0` and [Node.js](https://nodejs.org/en/)
 version to be minimum of `6.9.5`, which is the Long Term Support (LTS) version, and
 [Mercurial](http://mercurial.selenic.com/) with
 [`activity` extension](http://mercurial.selenic.com/wiki/ActivityExtension) to be installed.
@@ -37,7 +37,7 @@ npm install grunt-hgactivity --save-dev
 Or by manually editing the "package.json" by adding the following line inside `devDependencies` object:
 
 ```js
-  "grunt-hgactivity": "~0.1"
+  "grunt-hgactivity": "^0.3.0"
 ```
 
 Later on it would be possible to install the plugin with the command `npm install`
@@ -157,8 +157,8 @@ sys.path.append(r'C:\\Python27\\Lib')
 
 ## Version history
 
-* `v0.3.0` (2017)
-  - Minimum supported Node.js version is now `6.9.5` (LTS)
+* `v0.3.0` (2017-07)
+  - Minimum Node.js version lifted from `4.2.0` to `6.9.5`
 * `v0.2.0` (2016-08-11)
   - Grunt.js `v1.0.0` and onward
   - Dependencies are sure :tophat: up to date
