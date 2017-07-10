@@ -116,8 +116,8 @@ module.exports = function hgactivity(grunt) {
         options.imagetitle :
         '') +
         (split !== 'none' ?
-        split :
-        '');
+          split :
+          '');
 
       // Need at least one pair of dates
       if (dates.length > 1) {
