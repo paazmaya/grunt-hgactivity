@@ -157,8 +157,10 @@ sys.path.append(r'C:\\Python27\\Lib')
 
 ## Version history
 
-* `v0.3.0` (2017-07)
+* `v0.3.0` (2017-07-10)
   - Minimum Node.js version lifted from `4.2.0` to `6.9.5`
+  - Dependencies updated
+  - `main` was pointing to a wrong file
 * `v0.2.0` (2016-08-11)
   - Grunt.js `v1.0.0` and onward
   - Dependencies are sure :tophat: up to date

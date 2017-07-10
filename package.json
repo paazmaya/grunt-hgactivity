@@ -1,7 +1,7 @@
 {
   "name": "grunt-hgactivity",
   "description": "Run Mercurial Activity extension to provide graphs for the given time spans",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "homepage": "https://github.com/paazmaya/grunt-hgactivity",
   "author": {
     "name": "Juga Paazmaya",
@@ -21,7 +21,7 @@
     "tasks",
     "README.md"
   ],
-  "main": "Gruntfile.js",
+  "main": "tasks/hgactivity.js",
   "engines": {
     "node": ">=6.9.5"
   },
