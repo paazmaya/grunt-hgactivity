@@ -10,7 +10,7 @@ its version control system and the current user should have
 [the Activity Extension](http://mercurial.selenic.com/wiki/ActivityExtension) installed.
 
 [![Build Status](https://semaphoreci.com/api/v1/paazmaya/grunt-hgactivity/branches/master/shields_badge.svg)](https://semaphoreci.com/paazmaya/grunt-hgactivity)
-[![Dependency Status](https://img.shields.io/gemnasium/paazmaya/grunt-hgactivity.svg?style=flat-square)](https://gemnasium.com/paazmaya/grunt-hgactivity)
+[![dependencies Status](https://david-dm.org/paazmaya/grunt-hgactivity/status.svg)](https://david-dm.org/paazmaya/grunt-hgactivity)
 [![Code Climate](https://img.shields.io/codeclimate/github/paazmaya/grunt-hgactivity.svg?style=flat-square)](https://codeclimate.com/github/paazmaya/grunt-hgactivity)
 [![Built with Grunt](http://img.shields.io/badge/Grunt-1.0-blue.svg?style=flat-square)](http://gruntjs.com/)
 [![Analytics](https://ga-beacon.appspot.com/UA-2643697-15/grunt-hgactivity/index?flat)](https://github.com/igrigorik/ga-beacon)
