@@ -27,7 +27,8 @@
   },
   "dependencies": {
     "grunt": "~1.0.4",
-    "moment": "~2.24.0"
+    "moment": "~2.24.0",
+    "snyk": "^1.192.4"
   },
   "devDependencies": {
     "eslint": "^5.16.0",
@@ -40,7 +41,9 @@
   },
   "scripts": {
     "test": "grunt test",
-    "lint": "eslint Gruntfile.js tasks"
+    "lint": "eslint Gruntfile.js tasks",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "keywords": [
     "hg",
@@ -51,5 +54,6 @@
     "chart",
     "graph",
     "gruntplugin"
-  ]
+  ],
+  "snyk": true
 }
