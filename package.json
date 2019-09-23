@@ -28,7 +28,7 @@
   "dependencies": {
     "grunt": "~1.0.4",
     "moment": "~2.24.0",
-    "snyk": "^1.192.4"
+    "snyk": "^1.228.3"
   },
   "devDependencies": {
     "eslint": "^5.16.0",
